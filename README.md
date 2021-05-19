@@ -8,3 +8,4 @@ The user will also need to update the SMPT connection.
 
 The user will also need to update the birthday.csv file with their recipients following the format of line 1.
 - Note: the user must leave line 1 in the .csv file
+- I have provided a sample in the .csv file as well
