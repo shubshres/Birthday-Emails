@@ -4,8 +4,9 @@ import random
 import smtplib
 
 # email login information
-email = "" # <- TYPE YOUR EMAIL BEWTEEN THE " "
-password = "" # <- TYPE YOUR PASSWORD BEWTEEN THE " "
+email = "**ENTER YOUR EMAIL HERE**" # <- TYPE YOUR EMAIL BETWEEN THE " "
+password = "**ENTER YOUR PASSWORD HERE**" # <- TYPE YOUR PASSWORD BETWEEN THE " "
+name = "**ENTER YOUR NAME HERE**" # <- TYPE YOUR NAME BETWEEN THE " "
 
 # Check if today matches a birthday in the birthdays.csv
 today = datetime.now()
@@ -25,9 +26,10 @@ if today_tuple in birthdays_dict:
     with open(file_path) as letter_file:
         contents = letter_file.read()
         contents = contents.replace("[NAME]", birthday_person["name"])
+        contents = contents.replace("[MY_NAME]", name)
 
 # Send the letter generated to that person's email address.
-    with smtplib.SMTP("") as connection: # <- TYPE YOUR EMAIL PROVIDERS SMTP SERVER ADDRESS HERE *NOTE: FOR GMAIL USE:("smtp.gmail.com", 587)*
+    with smtplib.SMTP("**TYPE EMAIL SMPTP HERE"**) as connection: # <- **NOTE: FOR GMAIL USE ("smtp.gmail.com", 587)**
         connection.starttls()
         connection.login(email, password)
         connection.sendmail(from_addr=email,
